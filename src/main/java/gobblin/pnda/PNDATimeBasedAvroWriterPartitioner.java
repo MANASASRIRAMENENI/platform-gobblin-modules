@@ -32,7 +32,7 @@ public class PNDATimeBasedAvroWriterPartitioner extends TimeBasedAvroWriterParti
 
   public PNDATimeBasedAvroWriterPartitioner(State state, int numBranches, int branchId) {
     super(state, numBranches, branchId);
-    this.prefix = state.getPropAsBoolean(PNDAAbstractConverter.SOURCE_PROPERTY) ? "source=" : "topic=";
+    this.prefix = state.getPropAsBoolean(PNDAAbstractConverter.SOURCE_PROPERTY) ? "source_" : "topic_";
   }
 
   public GenericRecord partitionForRecord(GenericRecord record) {
